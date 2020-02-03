@@ -28,65 +28,76 @@
       </div>
     </nav>
 
-    <!-- Modal -->
-
-    <div class="modal fade" id="demoModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title">Please confirm!</h2>
-            <button type="button" class="close" data-dismiss="modal">
-              <span>&times;</span>
-            </button>
-          </div>
-
-          <div class="modal-body">
-            <p>This is the modal body, do you like it?</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary">Confirm</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- alert -->
-    <div class="container">
+    <!-- Form -->
+    <!-- <form action="" style="width: 500px; margin:auto"> -->
+    <form action="" class="main-form needs-validation" novalidate>
       <div class="row">
         <div class="col">
-          <h1>Alerts &amp; Modal</h1>
+          <div class="form-group">
+            <label for="firstname">firstname</label>
+            <input
+              type="text"
+              name="firstname"
+              class="form-control is-invalid"
+            />
+            <div class="invalid-feedback">Looks good!</div>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
         <div class="col">
-          <div
-            class="alert alert-success alert-dismissable fade show"
-            role="alert"
-          >
-            <button type="button" class="close" data-dismiss="alert">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h2 class="alert-heading">This is an alert</h2>
-            <p>I'm an alert! <a href="#" class="alert-link">Click me!</a></p>
+          <div class="form-group">
+            <label for="lastname">lastname</label>
+            <input type="text" name="lastname" class="form-control" />
+            <small class="form-text text-muted">
+              This should be your last name.
+            </small>
           </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col">
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-toggle="modal"
-            data-target="#demoModal"
-          >
-            Show Modal
-          </button>
-        </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" class="form-control" required />
+        <div class="invalid-feedback">Please enter a valid username.</div>
       </div>
-    </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender" class="form-control">
+          <option value="male">male</option>
+          <option value="female">female</option>
+        </select>
+      </div>
+
+      <div class="form-check">
+        <input type="checkbox" id="accept-terms" class="form-check-input" />
+        <label for="accept-terms" class="form-check-label"
+          >Accept Terms &amp; Conditions</label
+        >
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 
     <script src="jquery/jquery.slim.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <script>
+      var form = document.querySelector(".needs-validation");
+
+      form.addEventListener("submit", function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        form.classList.add("was-validated");
+      });
+    </script>
   </body>
 </html>
