@@ -1,0 +1,22 @@
+{
+  "name": "bootstrapsandbox",
+  "version": "1.0.0",
+  "description": "An eye to how i could use bootstrap on my project with a bunch of classe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/black-code1/bootstrapsandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/black-code1/bootstrapsandbox/issues"
+  },
+  "homepage": "https://github.com/black-code1/bootstrapsandbox#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.1"
+  }
+}
